@@ -1,9 +1,9 @@
 FROM fedora
 
-RUN yum --setopt=tsflags=nodocs -y update
-RUN yum --setopt=tsflags=nodocs -y install nfs-utils
-RUN yum --setopt=tsflags=nodocs -y install glusterfs glusterfs-server glusterfs-fuse glusterfs-geo-replication glusterfs-cli glusterfs-api
-RUN yum --setopt=tsflags=nodocs -y install attr
+RUN yum -y update
+RUN yum -y install nfs-utils
+RUN yum -y install glusterfs glusterfs-server glusterfs-fuse glusterfs-geo-replication glusterfs-cli glusterfs-api
+RUN yum -y install attr
 RUN yum clean all
 
 ADD start-gluster.sh /
